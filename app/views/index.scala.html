@@ -1,12 +1,13 @@
 @(projects: List[Project], todoTasks : List[Task])
 
-@main("Welcome to Play 2.1") {
+@main(projects) {
     
-   <header>
-   	<hgroup>
-   		<h1>DashBoard</h1>
-   		<h2>Tasks over all projects</h2>
-   	</hgroup>
+    <header>
+        <hgroup>
+            <h1>Dashboard</h1>
+            <h2>Tasks over all projects</h2>
+        </hgroup>
+    </header>
    
    </header>
    
@@ -27,6 +28,4 @@
         }
     </article>
     
-} {
-	<h1>TEST</h1>
-	}
+}
