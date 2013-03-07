@@ -25,7 +25,7 @@ public class Project extends Model {
 		this.members.add(owner);
 	}
 	
-	public static Finder<Long,Project> finder = new Finder<Long,Project>(long.class,Project.class);
+	public static Finder<Long,Project> finder = new Finder<Long,Project>(Long.class,Project.class);
 	
 	public static Project create(String name, String folder, String owner){
 		
@@ -37,5 +37,17 @@ public class Project extends Model {
 	
 	public static List<Project> findInvolving(String user){
 		return finder.where().eq("members.email", user).findList();
+	}
+	
+	public static boolean isMember(Long project, String user){
+		return finder.where().eq("members.email",user).
+				eq("id",project).findRowCount()>0;
+	}
+	
+	public static String rename(Long projectId ,String newName){
+		Project project = finder.ref(projectId);
+		project.name=newName;
+		project.update();
+		return newName;
 	}
 }

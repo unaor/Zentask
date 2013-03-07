@@ -1,18 +1,6 @@
 package controllers;
 
-/*import java.util.List;
 
-import org.junit.Before;
-import org.junit.Test;
-
-import com.avaje.ebean.Ebean;
-import com.google.common.collect.ImmutableMap;
-
-import play.mvc.*;
-import play.libs.Yaml;
-import play.test.WithApplication;
-import static org.junit.Assert.*;
-import static play.test.Helpers.*;*/
 import models.User;
 
 import org.junit.*;
